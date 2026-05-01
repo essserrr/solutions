@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import "./Hero.scss";
 
 export type HeroStat = { num: string; label: string };
@@ -14,7 +15,7 @@ const Hero = ({ meta, title, lede, stats }: HeroProps) => {
   return (
     <section className="hero container">
       <div className="hero-meta">
-        <a href="#">Solutions</a>
+        <Link to="/">Solutions</Link>
         <span className="hero-meta-sep"></span>
         <span>{meta}</span>
       </div>

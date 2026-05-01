@@ -18,10 +18,14 @@ export default function Navbar() {
           <Link to="/" className={pathname === "/" ? "active" : ""}>
             Leverage for RWA
           </Link>
-          {/* Static HTML uses <a href="#"> (no dedicated route in reference). */}
-          <a href="#">Prime Brokerage for RWA</a>
-          <a href="#">Developers</a>
-          <a href="#">Docs</a>
+          <Link
+            to="/stablecoins"
+            className={pathname === "/stablecoins" ? "active" : ""}
+          >
+            Prime Brokerage for RWA
+          </Link>
+          <Link to=".">Developers</Link>
+          <Link to=".">Docs</Link>
         </nav>
         <button className="nav-cta">
           <span className="dot"></span>Request asset onboarding

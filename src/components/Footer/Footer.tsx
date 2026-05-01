@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 export default function Footer() {
@@ -19,16 +20,16 @@ export default function Footer() {
             <h5>Solutions</h5>
             <ul>
               <li>
-                <a href="#">Credit for RWAs</a>
+                <Link to="/">Credit for RWAs</Link>
               </li>
               <li>
-                <a href="#">For Asset Issuers</a>
+                <Link to="/">For Asset Issuers</Link>
               </li>
               <li>
-                <a href="#">For Leverage</a>
+                <Link to="/stablecoins">For Leverage</Link>
               </li>
               <li>
-                <a href="#">For Curators</a>
+                <Link to="/">For Curators</Link>
               </li>
             </ul>
           </div>
@@ -36,16 +37,16 @@ export default function Footer() {
             <h5>Developers</h5>
             <ul>
               <li>
-                <a href="#">Documentation</a>
+                <Link to=".">Documentation</Link>
               </li>
               <li>
-                <a href="#">SDK</a>
+                <Link to=".">SDK</Link>
               </li>
               <li>
-                <a href="#">Adapters</a>
+                <Link to=".">Adapters</Link>
               </li>
               <li>
-                <a href="#">Audits</a>
+                <Link to=".">Audits</Link>
               </li>
             </ul>
           </div>
@@ -53,16 +54,16 @@ export default function Footer() {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="#">About</a>
+                <Link to=".">About</Link>
               </li>
               <li>
-                <a href="#">DAO</a>
+                <Link to=".">DAO</Link>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <Link to=".">Careers</Link>
               </li>
               <li>
-                <a href="#">Press</a>
+                <Link to=".">Press</Link>
               </li>
             </ul>
           </div>

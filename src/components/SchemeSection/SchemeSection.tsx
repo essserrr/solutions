@@ -21,7 +21,6 @@ const SchemeSection = ({
   const sectionClass = disabled
     ? "section container section-disabled"
     : "section container";
-
   const captionClasses = ["scheme-caption", captionClassName]
     .filter(Boolean)
     .join(" ");

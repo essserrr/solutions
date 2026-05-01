@@ -18,12 +18,8 @@ export default function Navbar() {
           <Link to="/" className={pathname === "/" ? "active" : ""}>
             Leverage for RWA
           </Link>
-          <Link
-            to="/stablecoins"
-            className={pathname === "/stablecoins" ? "active" : ""}
-          >
-            For stablecoin issuers
-          </Link>
+          {/* Static HTML uses <a href="#"> (no dedicated route in reference). */}
+          <a href="#">Prime Brokerage for RWA</a>
           <a href="#">Developers</a>
           <a href="#">Docs</a>
         </nav>

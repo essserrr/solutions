@@ -1,6 +1,16 @@
+import type { ReactNode } from "react";
 import "./Hero.scss";
 
-const Hero = ({ meta, title, lede, stats }) => {
+export type HeroStat = { num: string; label: string };
+
+type HeroProps = {
+  meta: string;
+  title: ReactNode;
+  lede: string;
+  stats: HeroStat[];
+};
+
+const Hero = ({ meta, title, lede, stats }: HeroProps) => {
   return (
     <section className="hero container">
       <div className="hero-meta">

@@ -1,6 +1,12 @@
 import "./CTA.scss";
 
-const CTA = ({ title, lede, buttonText }) => {
+type CTAProps = {
+  title: string;
+  lede: string;
+  buttonText: string;
+};
+
+const CTA = ({ title, lede, buttonText }: CTAProps) => {
   return (
     <section className="section container">
       <div className="cta-block">

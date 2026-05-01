@@ -2,10 +2,12 @@ import { useCallback, useEffect, useState } from "react";
 
 const STORAGE_KEY = "gearbox-tweaks";
 
-function getInitialState() {
+type TweaksState = { palette: string; density: string };
+
+function getInitialState(): TweaksState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) return JSON.parse(raw) as TweaksState;
   } catch {}
   return { palette: "light", density: "compact" };
 }
@@ -19,12 +21,12 @@ export function useTweaks() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }, [state]);
 
-  const setPalette = useCallback(palette => {
-    setState(s => ({ ...s, palette }));
+  const setPalette = useCallback((palette: string) => {
+    setState((s: TweaksState) => ({ ...s, palette }));
   }, []);
 
-  const setDensity = useCallback(density => {
-    setState(s => ({ ...s, density }));
+  const setDensity = useCallback((density: string) => {
+    setState((s: TweaksState) => ({ ...s, density }));
   }, []);
 
   return {

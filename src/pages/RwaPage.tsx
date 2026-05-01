@@ -14,7 +14,7 @@ export default function RwaPage() {
       </Helmet>
 
       <Hero
-        meta="Solutions / Leverage for RWA"
+        meta="Leverage for RWA"
         title={
           <>
             Leverage for
@@ -1397,7 +1397,7 @@ export default function RwaPage() {
         items={[
           "Your asset has native transfer restrictions, registry checks or mint / redeem logic that must stay attached to the token itself.",
           "You need per-position intervention rights, including the ability to freeze, reassign, or enforce transfer, without pausing the entire market.",
-          "Subscriptions and redemptions primarily rely on native mechanisms. Secondary liquidity isn't established.",
+          "Subscriptions and redemptions primarily rely on native mechanisms. Secondary liquidity isn’t established.",
         ]}
       />
 

@@ -14,7 +14,7 @@ export default function StablecoinsPage() {
       </Helmet>
 
       <Hero
-        meta="Solutions / For stablecoin issuers"
+        meta="For stablecoin issuers"
         title={
           <>
             The borrowing product

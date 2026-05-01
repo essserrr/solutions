@@ -9,10 +9,13 @@
     "preview": "vite preview",
     "prepare": "husky",
     "check": "biome check --write",
-    "check:ci": "biome check --diagnostic-level=warn",
-    "typecheck:ci": "tsc --noEmit",
-    "test:e2e": "playwright test",
-    "test:e2e:baseline-html": "cross-env PLAYWRIGHT_HTML_BASELINE=1 playwright test e2e/visual-identity.spec.ts --update-snapshots"
+    "check:ci": "biome check --diagnostic-level=error",
+    "typecheck:ci": "tsc --noEmit"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
     "*.{ts,tsx,json,scss,css}": [
@@ -32,11 +35,9 @@
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
     "@gearbox-protocol/biome-config": "^1.0.27",
-    "@playwright/test": "^1.59.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "cross-env": "^10.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "typescript": "^6.0.3",

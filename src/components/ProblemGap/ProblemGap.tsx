@@ -1,12 +1,44 @@
 import "./ProblemGap.scss";
 
+/** Column headers in the compare grid (no body/tag). */
+export type GapCompareHeader = {
+  type: string;
+  title: string;
+};
+
+/** Data cells in the compare grid. */
+export type GapCompareCell = {
+  type: string;
+  title: string;
+  body: string;
+  tag: string;
+};
+
+export type GapCompareItem = GapCompareHeader | GapCompareCell;
+
+export type FailListItem = {
+  tone: string;
+  title: string;
+  body: string;
+  num: string;
+};
+
+export type ProblemGapProps = {
+  variant?: "gap" | "fail";
+  label?: string;
+  headline?: string;
+  description?: string;
+  items?: GapCompareItem[] | FailListItem[];
+};
+
 export default function ProblemGap({
   variant = "gap",
-  items = [],
+  items,
   label,
   headline,
   description,
-}) {
+}: ProblemGapProps) {
+  const list = items ?? [];
   return (
     <section className="section container">
       {(label || headline || description) && (
@@ -21,8 +53,8 @@ export default function ProblemGap({
 
       {variant === "gap" && (
         <div className="gap-compare">
-          {items.map((item, index) => {
-            const isHeader = !item.body && !item.tag;
+          {(list as GapCompareItem[]).map((item, index) => {
+            const isHeader = !("body" in item);
             if (isHeader) {
               return (
                 <div key={index} className={`gap-head ${item.type}`}>
@@ -44,7 +76,7 @@ export default function ProblemGap({
 
       {variant === "fail" && (
         <div className="fail-list">
-          {items.map((item, index) => (
+          {(list as FailListItem[]).map((item, index) => (
             <div key={index} className="fail-item" data-tone={item.tone}>
               <div>
                 <div className="fail-title">{item.title}</div>

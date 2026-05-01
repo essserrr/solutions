@@ -1,11 +1,27 @@
+import type { ReactNode } from "react";
 import "./Capabilities.scss";
+
+export type CapabilityRow = {
+  tone: string;
+  visual: ReactNode;
+  eyebrow: string;
+  headline: string;
+  lede: string;
+};
+
+export type CapabilitiesProps = {
+  label: string;
+  headline: string;
+  description?: string;
+  rows?: CapabilityRow[];
+};
 
 export default function Capabilities({
   label,
   headline,
   description,
   rows = [],
-}) {
+}: CapabilitiesProps) {
   /** HTML reference: RWA uses a second `.sh` column (`<p>`, possibly empty); stablecoins omits it entirely. */
   const showIntroParagraph = description !== undefined;
 
